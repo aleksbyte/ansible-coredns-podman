@@ -1,0 +1,38 @@
+---
+- hosts: all
+
+  become: true
+  become_user: root
+  gather_facts: false
+
+  vars_files:
+    - vars/main.yml
+
+#  pre_tasks:
+
+#  roles:
+#    - role: cfg_role
+#      when: configure_sys_network
+#      tags: ['one']
+
+  tasks:
+    - import_tasks: tasks/package.yml
+      tags:
+        #  - always
+        - packpod
+
+    - import_tasks: tasks/syscfg.yml
+      tags:
+        - syscfg
+
+    - import_tasks: tasks/zone-files.yml
+      tags:
+        - fzones
+
+    - import_tasks: tasks/container.yml
+      tags:
+        - always
+        - container
+
+# post_tasks
+...

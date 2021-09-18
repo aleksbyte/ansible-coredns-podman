@@ -1,0 +1,25 @@
+# Plat 0. - turn off selinux -> temporary
+# Plat 1. - open DNS ports tcp/53, udp/53
+#
+- name: Put SELinux in permissive mode, logging actions that would be blocked.
+  ansible.posix.selinux:
+    policy: targeted
+    state: permissive
+#    state: enforcing
+
+- name: Add an Team connection with static IP configuration
+  community.general.nmcli:
+    conn_name: ens160
+    ifname: ens160
+    type: ethernet
+    ip4: "10.0.0.238/24, 10.0.0.100/24"
+    gw4: "10.0.0.1"
+    autoconnect: true
+    state: present
+
+
+#- name: Enable SELinux
+#  ansible.posix.selinux:
+#    policy: targeted
+#    state: enforcing
+

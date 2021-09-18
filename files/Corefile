@@ -1,0 +1,15 @@
+.:53 {
+    forward . 8.8.8.8 9.9.9.9
+    log
+    errors
+}
+lab.local:53 {
+    file /etc/coredns/zones/db.lab.local
+    log
+    errors
+}
+10.0.0.0/24:53 {
+    file /etc/coredns/zones/db.10.0.0
+    log
+    errors
+}

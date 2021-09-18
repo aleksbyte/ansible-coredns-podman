@@ -1,0 +1,54 @@
+# Folder view configuration files
+.DS_Store
+Desktop.ini
+
+# build files
+*.src.rock
+*.zip
+*.tar.gz
+
+# Compiled Python files
+*.pyc
+
+# Object files
+*.o
+*.os
+*.ko
+*.obj
+*.elf
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.def
+*.exp
+
+# Shared objects, Executables
+*.so
+*.so.*
+*.dylib
+*.exe
+*.exe~
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Ansible
+*.retry
+
+# vim
+*~
+*.swp
+
+# envfiles
+.env
+.envrc
+envfile

@@ -1,0 +1,5 @@
+---
+# vars:
+src_coredns_corefile: files/Corefile
+dest_coredns_corefile: /etc/coredns/Corefile
+src_coredns_zone_files_paths: files/zones

@@ -1,0 +1,41 @@
+---
+#vars:
+#  src_coredns_corefile: files/Corefile
+#  dest_coredns_corefile:  /etc/coredns/Corefile
+#  src_coredns_zone_files_paths: files/zones
+
+- name: make /etc/coredns directory
+  file:
+    path: /etc/coredns
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: make zone directory
+  file:
+    path: /etc/coredns/zones
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Copy Corefile configuration file
+  ansible.builtin.copy:
+    src: "{{ src_coredns_corefile }}"
+    dest: "{{ dest_coredns_corefile }}"
+    owner: root
+    group: root
+    mode: u+rw,g=r,o=r
+
+- name: Copy zone files
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: /etc/coredns/zones
+    owner: root
+    group: root
+    mode: 0644
+  loop:
+    - files/zones/db.10.0.0
+    - files/zones/db.lab.local
+...

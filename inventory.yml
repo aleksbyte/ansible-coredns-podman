@@ -1,0 +1,9 @@
+---
+lab:
+  hosts:
+    almavm:
+      ansible_host: 10.0.0.202
+    rockvm:
+      ansible_host: 10.0.0.237
+    ro238:
+      ansible_host: 10.0.0.238

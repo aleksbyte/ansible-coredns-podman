@@ -1,0 +1,30 @@
+#
+---
+- name: Pull and configure container - coreDNS
+  containers.podman.podman_container:
+    name: coredns
+    #  state: present
+    ports:
+      - "10.0.0.100:53:53/tcp"
+      - "10.0.0.100:53:53/udp"
+    volumes: "/etc/coredns:/etc/coredns:Z"
+    image: docker.io/coredns/coredns
+    command: -conf /etc/coredns/Corefile
+    state: created
+
+- name: install systemd coredns unit
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /home/ansible/container-coredns.service
+    dest: /etc/systemd/system/container-coredns.service
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: install systemd coredns unit
+  ansible.builtin.systemd:
+    daemon_reload: yes
+    enabled: yes
+    name: container-coredns.service
+    state: started
+

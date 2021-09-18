@@ -1,0 +1,19 @@
+$TTL    604800
+@       IN      SOA     fluffdock1.lab.local. mail.lab.local. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+; name servers - NS records
+        IN      NS      fluffdock1.lab.local.
+
+;
+; PTR Records
+230     IN      PTR     node.lab.local.     ; 10.0.0.230
+231     IN      PTR     node1.lab.local.     ; 10.0.0.231
+232     IN      PTR     node2.lab.local.     ; 10.0.0.232
+233     IN      PTR     node3.lab.local.     ; 10.0.0.233
+234     IN      PTR     node4.lab.local.     ; 10.0.0.234
+235     IN      PTR     node4.lab.local.     ; 10.0.0.235

@@ -1,0 +1,7 @@
+---
+- name: install module Container Tools
+  ansible.builtin.package:
+    name:
+      - "@container-tools"
+    state: present
+...
