@@ -33,4 +33,6 @@ Start "by hands":
 # Misc notes
 1. NetworkManager
 a.  systemctl restart NetworkManager
-b.  nmcli con down enp0s3 && nmcli con up enp0s3
+b.  nmcli con down enp0s3 && nmcli con up enp0s3, configure secondory IP for network
+c.  +role for system unit generate
+d.  DNS zones ??
