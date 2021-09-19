@@ -1,4 +1,4 @@
-Start coredns root/container on RHEL like Linux
+Start coredns root/container on RHEL similar Linux
 
 Init repo playbook, raw... -  @work.
 2Do - a lot ..
